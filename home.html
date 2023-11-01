@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+<!-- DEBUT  BANDEAU D EN TETE....................................................... -->
+    <header>
+      <a class="logo" href="#">TERROIRS DE FRANCE</a>
+    </header>
+  <meta charset="UTF-8">
+  <title>TERROIR DE FRANCE</title>
+    <link rel="stylesheet" href="style.css">
+</script>
+<!-- FIN  BANDEAU D EN TETE.......................................................... -->
+
+<!-- DEBUT  CARTE GOOGLE MAP......................................................... -->
+<!-- div centralisation carte -->
+<div style="display: flex; justify-content: center; align-items: center; height: 75vh;">
+  <p>Je suis centré!</p>
+<!-- div centralisation carte -->
+<meta charset="utf-8">
+		<script src="https://maps.google.com/maps/api/js?key=AIzaSyCGOBVMU0Q0QBhOD5Tqmf4rUPIBiRQwJrw" type="text/javascript"></script>
+		<script async type="text/javascript">
+			// On initialise la latitude et la longitude de Paris (centre de la carte)
+			var lat = 48.852969;
+			var lon = 2.349903;
+			var map = null;
+			// Fonction d'initialisation de la carte
+			function initMap() {
+				// Créer l'objet "map" et l'insèrer dans l'élément HTML qui a l'ID "map"
+				map = new google.maps.Map(document.getElementById("map"), {
+					// Nous plaçons le centre de la carte avec les coordonnées ci-dessus
+					center: new google.maps.LatLng(lat, lon), 
+					// Nous définissons le zoom par défaut
+					zoom: 11, 
+					// Nous définissons le type de carte (ici carte routière)
+					mapTypeId: google.maps.MapTypeId.ROADMAP, 
+					// Nous activons les options de contrôle de la carte (plan, satellite...)
+					mapTypeControl: true,
+					// Nous désactivons la roulette de souris
+					scrollwheel: true, 
+					mapTypeControlOptions: {
+						// Cette option sert à définir comment les options se placent
+						style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR 
+					},
+					// Activation des options de navigation dans la carte (zoom...)
+					navigationControl: true, 
+					navigationControlOptions: {
+						// Comment ces options doivent-elles s'afficher
+						style: google.maps.NavigationControlStyle.ZOOM_PAN 
+					}
+				});
+			}
+      // Nous initialisons une liste de marqueurs
+var villes = {
+	"PANAM":{"lat": 48.852969,"lon": 2.349903},
+	"Brest":{"lat": 48.383,"lon": -4.500},
+	"Quimper":{"lat": 48.000,"lon": -4.100},
+	"Bayonne":{"lat": 43.500,"lon": -1.467}
+};
+function initMap() {
+	map = new google.maps.Map(document.getElementById("map"), {
+		center: new google.maps.LatLng(lat, lon),
+		zoom: 6.1,
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		mapTypeControl: true,
+		scrollwheel: false,
+		mapTypeControlOptions: {
+			style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
+		},
+		navigationControl: true,
+		navigationControlOptions: {
+			style: google.maps.NavigationControlStyle.ZOOM_PAN
+		}
+	});
+	// Nous parcourons la liste des villes
+	for(ville in villes){
+		var marker = new google.maps.Marker({
+			// A chaque boucle, la latitude et la longitude sont lues dans le tableau
+			position: {lat: villes[ville].lat, lng: villes[ville].lon},
+			// On en profite pour ajouter une info-bulle contenant le nom de la ville
+			title: ville,
+			map: map
+		});	
+	}
+}
+			window.onload = function(){
+				// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
+				initMap(); 
+			};
+		</script>
+		<style type="text/css">
+			#map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
+				height:500px; width: 800px;
+			}
+		</style>s
+		<title>Carte</title>
+	</head>
+	<body>
+		<div id="map">
+			<!-- Ici s'affichera la carte -->
+		</div>
+     <!-- fermeture centralisation -->
+  </div>
+<!-- FIN  CARTE GOOGLE MAP.......................................................... -->
+
+<!-- DEBUT SIDEBAR ................................................. -->
+<div id="sidebar">
+  <h2>Sidebar Title</h2>
+  <ul>
+      <li><a href="#">Link 1</a></li>
+      <li><a href="#">Link 2</a></li>
+      <li><a href="#">Link 3</a></li>
+  </ul>
+</div>
+<!-- FIN SIDEBAR ................................................. -->
+
+<!-- DEBUT BANDEAU BAS DE PAG........................................................ -->
+<footer>
+  <div class="contenue - footer ">
+      <div class="blo footer-service">
+          <h3>NOUS CONTACTER</h3>
+      </div>
+  </div>
+</footer>  
+<!-- FIN BANDEAU BAS DE PAGE....................................... -->
+
+	</body>
+</html>

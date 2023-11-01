@@ -1,0 +1,56 @@
+/*DEBUT BACKGROUND............................... */
+body {
+  background-image: url('trf.PNG');
+ }
+/*FIN BACKGROUND.................................. */
+
+/*DEBUT BANDEAU D EN TETE........................... */
+header {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  background-color: #06080b;
+  color: #f9f5f5;
+  height: 60px;
+}
+/*FIN BANDEAU D EN TETE....................................... */
+
+
+/*DEBUT SIDEBAR ................................................. */
+#sidebar {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: #09223a;
+  padding: 20px;
+  width: 200px;
+  height: 500px;
+  overflow-y: auto;
+}
+#sidebar h2 {
+  margin-top: 0;
+}
+#sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+#sidebar li a {
+  text-decoration: none;
+  color: #2f4a5b;
+}
+#sidebar li a:hover {
+  color: #007bff;
+}
+/*FIN SIDEBAR ................................................. */
+
+
+/*DEBUT BANDEAU DE BAS DE PAGES................................. */
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  background-color: #182533;
+  color: #fff;
+}
+/*FIN BANDEAU DE BAS DE PAGES.................................... */
